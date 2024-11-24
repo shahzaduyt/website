@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptic Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Cryptic Corner</h1>
+            <p>Your entry point into the world of cryptic communication</p>
+        </div>
+
+        <div class="form-container">
+            <label for="username">Enter Your Name:</label>
+            <input type="text" id="username" placeholder="Enter your name" required>
+
+            <div class="terms-container">
+                <input type="checkbox" id="accept-terms" required>
+                <label for="accept-terms">I accept the <a href="t&c.html" target="_blank">terms and conditions</a></label>
+            </div>
+
+            <div class="actions">
+                <button id="createBtn" onclick="toggleModal('create')">Create Room</button>
+                <button id="joinBtn" onclick="toggleModal('join')">Join Room</button>
+            </div>
+        </div>
+
+        <!-- Create Room Modal -->
+        <div id="createModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('create')">&times;</span>
+                <h3>Create a Room</h3>
+                <input type="text" id="create-room-id" placeholder="Room ID" required>
+                <input type="password" id="create-room-password" placeholder="Password" required>
+                <button onclick="createRoom()">Create Room</button>
+            </div>
+        </div>
+
+        <!-- Join Room Modal -->
+        <div id="joinModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal('join')">&times;</span>
+                <h3>Join a Room</h3>
+                <input type="text" id="join-room-id" placeholder="Room ID" required>
+                <input type="password" id="join-room-password" placeholder="Password" required>
+                <button onclick="joinRoom()">Join Room</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

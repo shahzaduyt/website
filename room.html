@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptic Corner - Chat Room</title>
+    <link rel="stylesheet" href="room.css">
+</head>
+<body>
+    <div class="room-container">
+        <div class="header">
+            <h1>Welcome to the Room</h1>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="chat-box">
+            <div class="messages" id="messages"></div>
+            <textarea id="messageInput" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="room.js"></script>
+</body>
+</html>
